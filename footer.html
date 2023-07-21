@@ -1,0 +1,110 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+    /*bottom-section starts*/
+.icon {
+  color: yellow;
+}
+.flipped {
+  transform: scaleX(-1);
+}
+.bottom-section {
+  background-color: #266e18;
+  padding: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position:absolute;
+  left: 0;
+  right: 0;
+  height: 38vh;
+  margin-bottom:0%;
+}
+.company-info,
+.services-info,
+.contact-info {
+  flex-basis: 30%;
+  margin-bottom: 10px;
+}
+.company-info img {
+  max-width: 100px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.services-info ul,
+.contact-info ul {
+  list-style-type:none;
+  padding: 0;
+}
+
+.services-info ul li,
+.contact-info ul li {
+  margin-bottom: 9px;
+}
+    .company-info {
+    flex-basis: 30%;
+    margin-bottom:20px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    }
+
+    .company-info img {
+    max-width: 100px;
+    margin-right: 10px;
+    }
+    .contact-info ul li a {
+        color: #f2f2f8;
+        text-decoration: none;
+        margin-right: 10px; /* Increase margin for spacing */
+        border-radius: 50%;
+    }
+    .contact-info ul li a i {
+       font-size: 28px; /* Increase or decrease as needed */
+    }
+@media screen and(max-width:600px) {
+  .bottom-section{
+    background-color: red;
+  }
+}
+</style>
+<section class="bottom-section">
+    <div class="company-info">
+      <img src="Tunic (2).png" alt="Company Logo">
+      <p class="company-description">A pioneering company that combines the power of solar energy with sustainable agriculture practices.</p>
+    </div>
+    <div class="services-info">
+      <h3>Research</h3>
+      <ul>
+        <li>Energy Storage Solutions</li>
+        <li>Solar PV</li>
+        <li>Agrivoltaic</li>
+      </ul>
+    </div>
+    <div class="contact-info" id="content-section">
+      <h3>Contact</h3>
+      <ul>
+        <li><i class="fas fa-envelope icon"></i> info@tunicagroenergy.com</li>
+        <li><i class="fas fa-phone icon flipped"></i> 0703697928</li>
+        <li><i class="fas fa-map-marker-alt icon"></i> Kasarani, Seasons</li>
+        <li>
+          <!-- WhatsApp Icon and Link -->
+          <a href="https://wa.me/0703697928" target="_blank">
+            <i class="fab fa-whatsapp fa-3x"></i>
+          </a>
+          <!-- LinkedIn Icon and Link -->
+          <a href="https://www.linkedin.com/in/wilson-ngunjri-74b487255" target="_blank">
+            <i class="fab fa-linkedin fa-3x"></i>
+          </a>
+          <!-- Twitter Icon and Link -->
+          <a href="https://twitter.com/ngunjiri_willy" target="_blank">
+            <i class="fab fa-twitter fa-3x"></i>
+          </a>
+        </li>
+      </ul>
+    </div>    
+  </section>
+  

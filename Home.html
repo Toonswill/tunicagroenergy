@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+  <script src="script.js"></script>
+  <style>
+    #slider {
+        overflow: hidden;
+        height: auto;
+    }
+    #slider figure {
+        position: relative;
+        width: 417%;
+        margin: 0%;
+        left: 0;
+        animation: 15s slider infinite;
+    }
+    #slider figure img{
+        width: 24%;
+        float: left;
+        object-fit: c;
+    }
+  #prev-button {
+    position:fixed;
+    left: 0;
+    top: 50%;
+    font-size: 30px;
+  }
+
+  #next-button {
+    position:fixed;
+    right: 0;
+    top: 50%;
+    font-size: 30px;
+  }
+    @keyframes slider {
+        0% {
+            left: 0;
+        }
+        15% {
+            left: 0;
+        }
+        20% {
+            left: -100%;
+        }
+        35% {
+            left: -100%;
+        }
+        40% {
+            left: -200%;
+        }
+        55% {
+            left: -200%;
+        }
+        60% {
+            left: -300%;
+        }
+        75% {
+            left: -300%;
+        }
+        80% {
+            left: -500%;
+        }
+        95% {
+          left: -500%;
+        }
+        100% {
+          left:-500%;
+        }
+    }
+</style>
+<script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+<script>
+  $(function(){
+    $('#header').load('header.html');
+  });
+</script>
+</head>
+<body>
+  <div id="header"></div>
+  <div  id="slider">
+    <figure>
+        <img src="agrivoltaic.jpg">
+        <img src="agri2.jpg">
+        <img src="Agrivoltaic-1.jpg">
+        <img src="agri3.jpg">
+        <img src="background.jpg">
+    </figure>
+</div>
+</div>
+<button id="prev-button"><</button>
+<button id="next-button">></button>
+</body>
+  <script>
+    var slideIndex = 0;
+    showImage(slideIndex);
+
+    function changeImage(n) {
+      showImage(slideIndex += n);
+    }
+
+    function showImage(n) {
+  var images = document.getElementsByTagName('img');
+  var totalImages = images.length;
+
+  // Calculate the actual index to display
+  slideIndex = (n % totalImages + totalImages) % totalImages;
+
+  for (var i = 0; i < images.length; i++) {
+    images[i].style.transform = "translateX(-" + (slideIndex * 100) + "%)";
+  }
+ }
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+  // Define a variable to keep track of the current slide index
+  var slideIndex = 0;
+
+  // Show the initial image (slideIndex = 0) when the page loads
+  showImage(slideIndex);
+
+  // Function to handle image navigation when the buttons are clicked
+  function changeImage(n) {
+    showImage(slideIndex += n);
+  }
+
+  // Function to show the appropriate image based on the slideIndex
+  function showImage(n) {
+    var images = document.getElementsByTagName('img');
+    if (n >= images.length) {
+      slideIndex = 0; // If index goes beyond the last image, go back to the first image
+    }
+    if (n < 0) {
+      slideIndex = images.length - 1; // If index goes below 0, go to the last image
+    }
+    for (var i = 0; i < images.length; i++) {
+      images[i].style.transform = "translateX(-" + (slideIndex * 100) + "%)";
+    }
+  }
+
+  // Add event listeners to the buttons for navigation
+  var prevButton = document.getElementById('prev-button');
+  var nextButton = document.getElementById('next-button');
+
+  prevButton.addEventListener('click', function() {
+    changeImage(-1); // Go to the previous image (n = -1)
+  });
+
+  nextButton.addEventListener('click', function() {
+    changeImage(1); // Go to the next image (n = 1)
+  });
+});
+
+  </script>
+</body>
+</html>

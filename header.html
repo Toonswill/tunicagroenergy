@@ -1,0 +1,267 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  *{
+    margin:0;
+  }
+  :root {
+    --content-width: 50%; /* Adjust the width as needed */
+    --content-margin-top: 30px; /* Adjust the distance from the margin as needed */
+  }
+  .logo-wrapper {
+  margin-right: 70px; /* Adjust the margin as needed */
+}
+
+  .fixed-header {
+    background-color: rgba(21, 205, 225, 0.8);
+    padding: 27px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    z-index: 999;
+    width:100%;
+  }
+
+  .fixed-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    z-index: -1;
+  }
+
+  #imagea {
+    max-height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+  nav li:nth-last-child(-n+4) {
+  margin-right: 20px;
+}
+
+
+  nav a {
+    display: block;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: sans-serif;
+  }
+  .home-button .about-button .services-button .agrivoltaic-button .contact-button{
+    color: blue;
+  }
+  .content-section {
+  display: none;
+  position: absolute;
+  top: 100%; /* Adjust the distance from the button */
+  left: 60%;
+  transform: translateX(-50%);
+  background-color: #0ebdd0;
+  padding: 10px;
+  width: 50%; /* Adjust the width as needed */
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.content-section ul {
+  padding: 0;
+  margin: 0;
+}
+
+.content-section li {
+  display:list-item;
+  align-items: center;
+}
+
+.content-section li i {
+  margin-right: 10px;
+
+}
+
+  .content-section h2,
+  .content-section p {
+    margin-bottom: 10px;
+  }
+
+  .content-section.active {
+    display: block;
+  }
+
+  nav a:hover + .content-section,
+  .content-section:hover {
+    display: block;
+  }
+  .icon {
+    color: yellow;
+  }
+
+  .flipped {
+    transform: scaleX(-1);
+  }
+
+  .home-button {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  .image-overlay {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    width: 150vh;
+    height: 80vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+
+.menu {
+  display: none; /* Hide the menu by default on desktop */
+}
+  @media screen and (max-width: 600px) {
+  /* Mobile-specific CSS code goes here */
+
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 40px;
+    color: blue;
+    margin-left: 100px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.active {
+    display: block;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+  /* Move buttons to the menu */
+  .home-button,
+  .about-button,
+  .research-button,
+  .decarbonization-button,
+  .contact-button {
+    display: none;
+  }
+
+  .menu.active .home-button,
+  .menu.active .about-button,
+  .menu.active .research-button,
+  .menu.active .decarbonization-button,
+  .menu.active .contact-button {
+    display: block;
+  }
+  .fixed-header{
+    padding: 26px;
+    background-color:beige;
+  }
+}
+@media screen and (min-width: 601px) {
+  .menu-icon {
+    display: none; /* Hide the menu icon on desktop */
+  }
+
+  .menu {
+    display: none; /* Hide the menu on desktop */
+  }
+}
+</style>
+<script>
+function toggleMenu() {
+  var menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+}
+</script>
+<script
+src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+crossorigin="anonymous"></script>
+<header class="fixed-header">
+  <div class="logo-wrapper">
+    <img id="imagea" src="Tunic (2).png" alt="Company Logo">
+  </div>
+  <nav>
+    <ul>
+      <li>
+        <a href="index.html" class="home-button">Home</a>
+        <div class="image-overlay">
+          <img src="background.jpg" alt="image" class="hidden-image">
+        </div>
+      </li>
+      <li>
+        <a href="About.html" class="about-button">About</a>
+        <div class="content-section about-content">
+          <h2>About TunicAgroEnergy</h2>
+          <p>Tunic AgroEnergy is a pioneering company that combines the power of solar energy with sustainable agriculture practices. Our mission is to provide integrated solutions that empower farmers and rural communities with clean energy and promote sustainable food production.</p>
+        </div>
+      </li>
+      <li>
+        <a href="research.html" class="research-button">Research</a>
+        <div class="content-section services-content">
+          <h2>Research</h2>
+          <p>Power Storage solutions<br>
+             Solar PV <br>
+            Agrivoltaics</p>
+        </div>
+      </li>
+      <li>
+        <a href="decarbonization.html" class="decarbonization-button">Decarbonization</a>
+        <div class="content-section agrivoltaic-content">
+          <h2>Decarbonization</h2>
+          <p>Agrivoltaics, also known as agrophotovoltaics or solar sharing, is an innovative approach that combines the cultivation of crops or plants with the generation of solar energy. It involves installing solar panels or photovoltaic (PV) modules above agricultural fields or on structures within the farm, allowing for the dual use of the land for both farming and solar power production.
+            In an agrivoltaic system, the solar panels are mounted at a height that allows sunlight to reach the crops or plants growing beneath them. The panels provide shade, reducing evaporation and helping to create a microclimate that can benefit the plants. Additionally, the panels generate clean electricity, which can be used on-site or fed into the grid.</p>
+        </div>
+      </li>
+      <li>
+        <a href="contact.html" class="contact-button">Contact</a>
+        <div class="content-section contact-section">
+          <h2>CONTACT INFORMATION</h2>
+          <ul>
+            <li><i class="fas fa-envelope icon"></i> info@tunicagroenergy.com</li>
+            <li><i class="fas fa-phone icon flipped"></i> 0703697928</li>
+            <li><i class="fas fa-map-marker-alt icon"></i> Kasarani, Seasons</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- moblie layout style-->
+  <nav>
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <div class="menu">
+      <ul>
+        <li><a class="home-button" href="Home.html">Home</a></li>
+        <li><a class="about-button" href="About.html">About</a></li>
+        <li><a class="research-button" href="research.html">Research</a></li>
+        <li><a class="decarbonization-button" href="#">Decarbonization</a></li>
+        <li><a class="contact-button" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,119 @@
+:root {
+    --content-width: 50%; /* Adjust the width as needed */
+    --content-margin-top: 30px; /* Adjust the distance from the margin as needed */
+  }
+
+  .fixed-header {
+    background-color: rgba(21, 205, 225, 0.8);
+    padding: 27px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    width:100%;
+  }
+
+  .fixed-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    z-index: -1;
+  }
+
+  img {
+    max-height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  nav li {
+    margin-right:130px;
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: sans-serif;
+  }
+  .home-button .about-button .services-button .agrivoltaic-button .contact-button{
+    color: blue;
+  }
+  .content-section {
+  display: none;
+  position: absolute;
+  top: 100%; /* Adjust the distance from the button */
+  left: 60%;
+  transform: translateX(-50%);
+  background-color: #0ebdd0;
+  padding: 10px;
+  width: 50%; /* Adjust the width as needed */
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+  .content-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content-section li {
+    margin-bottom: 10px;
+  }
+
+  .content-section h2,
+  .content-section p {
+    margin-bottom: 10px;
+  }
+
+  .content-section.active {
+    display: block;
+  }
+
+  nav a:hover + .content-section,
+  .content-section:hover {
+    display: block;
+  }
+
+  .icon {
+    color: yellow;
+  }
+
+  .flipped {
+    transform: scaleX(-1);
+  }
+
+  .home-button {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  .image-overlay {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    right: 0px;
+    width: 150vh;
+    height: 80vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }

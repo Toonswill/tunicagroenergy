@@ -1,0 +1,130 @@
+body {
+  background-image: url("agrivoltaic.jpg");
+  background-repeat: no-repeat;
+  background-size:contain;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+.icon {
+  color: yellow;
+}
+.flipped {
+  transform: scaleX(-1);
+}
+.middle-section {
+  margin-top: 5%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+}
+
+.column {
+  flex-basis: 30%; /* Adjust the flex-basis to control the width of each column */
+  padding: 1px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  height: 100%;
+}
+
+/* Apply unique styles to image with ID "image1" */
+#image1 {
+  width: 100%;
+  height:auto;
+  position: relative;
+  /* Add any specific styles for image1 here */
+}
+
+/* Apply unique styles to image with ID "image2" */
+#image2 {
+  width: 100%;
+  height:auto;
+  position: relative;
+  /* Add any specific styles for image2 here */
+}
+
+/* Apply unique styles to image with ID "image3" */
+#image3 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* Add any specific styles for image3 here */
+}
+#image1,
+#image2,
+#image3 {
+flex-direction: column;
+}
+.image-text {
+  text-align: center; /* Center the text horizontally */
+  margin-top: 14px; /* Add some spacing between the image and the text */
+}
+
+.additional-content {
+  padding: 20px;
+  text-align: center;
+}
+.additional-content h2 {
+  margin-top:20%;
+  color:rgb(1, 247, 230);
+  font-size: 40px;
+  margin-bottom: 23%;
+  margin-left: 0;
+  margin-right: 0;
+}
+/*bottom-section starts*/
+.bottom-section {
+  background-color: #266e18;
+  padding: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position:absolute;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  margin-top: 36%;
+}
+.company-info,
+.services-info,
+.contact-info {
+  flex-basis: 30%;
+  margin-bottom: 10px;
+}
+.company-info img {
+  max-width: 100px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+.services-info ul,
+.contact-info ul {
+  list-style-type:none;
+  padding: 0;
+}
+
+.services-info ul li,
+.contact-info ul li {
+  margin-bottom: 9px;
+}
+.company-info {
+  flex-basis: 30%;
+  margin-bottom:20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.company-info img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+@media screen and(max-width:600px) {
+  .bottom-section{
+    background-color: red;
+  }
+}
